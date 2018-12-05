@@ -9,14 +9,6 @@ client.on('ready', () => {
     console.log('I am ready!');
 });
 
-    client.user.setActivity(`By Clementine#0001`, { type: 'WATCHING' });
-});
-
-// Set the bot's online/idle/dnd/invisible status
-client.on("ready", () => {
-    client.user.setStatus("dnd");
-});
-
 const serverStats = {
     clock: '498179508239728641',
 }
@@ -94,6 +86,5 @@ client.on('ready', () => {
     client.channels.get(serverStats.clock).setName(`#͟T͟E͟A͟M͟ ͟K͟E͟N͟I͟U͟ ❤`);
 }, 600);
  });
-
 
 client.login(process.env.BOT_TOKEN);
