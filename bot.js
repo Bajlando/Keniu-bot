@@ -1,9 +1,20 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
+const prefix = "$";
 const fs = require("fs");
+const Canvas = require('canvas');
+const snekfetch = require('snekfetch');
 
 client.on('ready', () => {
     console.log('I am ready!');
+});
+
+    client.user.setActivity(`By Clementine#0001`, { type: 'WATCHING' });
+});
+
+// Set the bot's online/idle/dnd/invisible status
+client.on("ready", () => {
+    client.user.setStatus("dnd");
 });
 
 const serverStats = {
