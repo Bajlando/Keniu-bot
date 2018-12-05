@@ -84,7 +84,7 @@ client.on('ready', () => {
     client.channels.get(serverStats.clock).setName(`#TEAM KENIU`);
     client.channels.get(serverStats.clock).setName(`#TEAM KENIU`);
     client.channels.get(serverStats.clock).setName(`#TEAM KENIU`);
-    client.channels.get(serverStats.clock).setName(`#̲T̲E̲A̲M̲ KENIU`);
+    client.channels.get(serverStats.clock).setName(`#TEAM KENIU`);
     client.channels.get(serverStats.clock).setName(`#͟T͟E͟A͟M͟ ͟K͟E͟N͟I͟U͟`);
     client.channels.get(serverStats.clock).setName(`#͟T͟E͟A͟M͟ ͟K͟E͟N͟I͟U͟ ❤`);
     client.channels.get(serverStats.clock).setName(`#͟T͟E͟A͟M͟ ͟K͟E͟N͟I͟U͟ ❤`);
