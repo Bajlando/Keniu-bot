@@ -70,6 +70,8 @@ client.on('ready', () => {
     client.channels.get(serverStats.clock).setName(`#TE`);
     client.channels.get(serverStats.clock).setName(`#TEA`);
     client.channels.get(serverStats.clock).setName(`#TEA`);
+    client.channels.get(serverStats.clock).setName(`#TEAM`);
+    client.channels.get(serverStats.clock).setName(`#TEAM`);
     client.channels.get(serverStats.clock).setName(`#TEAM K`);
     client.channels.get(serverStats.clock).setName(`#TEAM K`);
     client.channels.get(serverStats.clock).setName(`#TEAM K`);
