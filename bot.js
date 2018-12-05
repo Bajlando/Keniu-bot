@@ -6,6 +6,10 @@ client.on('ready', () => {
     console.log('I am ready!');
 });
 
+const serverStats = {
+    clock: '498179508239728641',
+}
+
 client.on('ready', () => {
     let autopisanko = "10s";
     setInterval(function() {
