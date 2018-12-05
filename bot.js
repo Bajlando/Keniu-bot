@@ -5,13 +5,19 @@ const fs = require("fs");
 const Canvas = require('canvas');
 const snekfetch = require('snekfetch');
 
+const serverStats = {
+    guildID: '303657307231879169',
+    totalUsersID: '499164441506480129',
+    memberCountID: '499164461459046410',
+    botCount: '499164691730268170',
+    clock: '499663218403180546',
+    time: '501863189458452480',
+    newUser: '499164704313442314'
+}
+
 client.on('ready', () => {
     console.log('I am ready!');
 });
-
-const serverStats = {
-    clock: '498179508239728641',
-}
 
 client.on('ready', () => {
     let autopisanko = "10s";
