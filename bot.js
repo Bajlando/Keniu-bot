@@ -65,12 +65,6 @@ client.on('guildMemberAdd', async member => {
 	channel.send(`**${member}** **Właśnie dołączył na serwer! Zerknij do regulaminu i baw się dobrze**`, attachment);
 });
 
-client.on('message', async message => {
-	if (message.content === '.join') {
-		client.emit('guildMemberAdd', message.member || await message.guild.fetchMember(message.author));
-	}
-});
-
 client.on('ready', () => {
     let autopisanko = "10s";
     setInterval(function() {
