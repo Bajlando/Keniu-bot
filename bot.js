@@ -5,8 +5,6 @@ const fs = require("fs");
 const Canvas = require('canvas');
 const snekfetch = require('snekfetch');
 const disco = new Discord.Client();
-const allowedUsers = "263340222375264257"
-const roles = "Test"
 
 client.on("ready", () => {
     client.user.setGame(`k.help | Na ${client.guilds.size} serwerach <3`, "https://www.twitch.tv/vami12");
