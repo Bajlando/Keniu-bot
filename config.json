@@ -1,6 +1,9 @@
+
 {
+  "token" : "d",
   "ms" : 1500,
   "roleToDisco" : ["Test", "(optional) another role to disco goes here"],
-  "prefix" : ".",
+  "prefix" : "d!",
   "allowedUsers" : ["263340222375264257", "(optional) another user id goes here"]
 }
+
