@@ -6,15 +6,6 @@ const Canvas = require('canvas');
 const snekfetch = require('snekfetch');
 const disco = new Discord.Client();
 
-client.on("ready", () => {
-    client.user.setGame(`k.help | Na ${client.guilds.size} serwerach <3`, "https://www.twitch.tv/vami12");
-});
-
-client.on("ready", () => {
-    client.user.setStatus("dnd");
-});
-
-
 disco.on("message", message => {
 
   function discoRole() {
