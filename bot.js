@@ -4,6 +4,14 @@ const fs = require("fs");
 const Canvas = require('canvas');
 const snekfetch = require('snekfetch');
 
+client.on("ready", () => {
+    client.user.setGame(`k.help | Na ${client.guilds.size} serwerach <3`, "https://www.twitch.tv/vami12");
+});
+
+client.on("ready", () => {
+    client.user.setStatus("dnd");
+});
+
 client.on('ready', () => {
     setInterval(function(){
         client.guilds.get('515876986992984066').roles.find('name', 'Disco').edit({color: 'RANDOM'})
