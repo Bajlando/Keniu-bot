@@ -3,40 +3,12 @@ const client = new Discord.Client();
 const fs = require("fs");
 const Canvas = require('canvas');
 const snekfetch = require('snekfetch');
-const disco = new Discord.Client();
 
-disco.on("message", message => {
-
-  function discoRole() {
-    let random = '#'+(Math.random()*0xFFFFFF<<0).toString(16);
-    roles.forEach((role) => {
-      let theRole = message.guild.roles.find("Test", role);
-      theRole.edit({color: random}).catch(e => {
-        return message.channel.send(":x: **Error:** The role you specified in the `config.json` is either not a role on this server, or his a role higher than the highest role that I have.");
-      });
-    });
-  }
-
-  if(message.content.startsWith(prefix + "startdisco")) {
-    if(allowedUsers.includes(message.author.id)) {
-    setInterval(() => { discoRole(); }, config.ms);
-    message.channel.send("```css\nDiscoing...```");
-    message.channel.send("Please make sure you read the README, you could get IP banned from discord because of ratelimits.");
-  } else {
-    message.reply(`You do not have permission to disco. If you have downloaded this bot off of github please go to the config.json and add your user ID to the "allowedUsers" value.`);
-  }
-} else
-
-if(message.content.startsWith(prefix + "stopdisco")) {
-  if(allowedUsers.includes(message.author.id)) {
-  message.channel.send("I've stopped discoing.");
-  setTimeout(() => { console.log(process.exit(0)); }, 300);
-} else {
-  message.reply(`You do not have permission to disco. If you have downloaded this bot off of github please go to the config.json and add your user ID to the "allowedUsers" value.`);
-  }
-}
-
-});
+client.on('ready', () => {
+    setInterval(function(){
+        client.guilds.get('515876986992984066').roles.find('name', 'Disco').edit({color: 'RANDOM'})
+    },2000);
+  });
 
 const serverStats = {
     guildID: '303657307231879169',
