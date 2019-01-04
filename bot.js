@@ -1,8 +1,82 @@
 const Discord = require('discord.js');
-const client = new Discord.Client();
+const client = new Discord.Client({fetchAllMembers: true});
 const fs = require("fs");
 const Canvas = require('canvas');
 const snekfetch = require('snekfetch');
+
+var members;
+
+var done = [];
+var queue = [];
+
+function wait(ms){
+   var start = new Date().getTime();
+   var end = start;
+   while(end < start + ms) {
+     end = new Date().getTime();
+  }
+}
+
+function ranBetween(min, max) {
+  return Math.round(Math.random() * (max - min) + min);
+}
+
+function send(user) {
+  console.log("Sent To "+user.tag);
+  user.sendMessage("Hej! Wbij do nas https://discord.gg/bBVWbNd");
+}
+
+setInterval(function () {
+  while(true) {
+    if(queue != []) {
+      if(done.indexOf(queue[0].tag) == -1) {
+        done.push(queue[0].tag);
+        try {
+          send(queue[0]);
+        } catch(e) {
+          continue;
+        }
+        queue.shift();
+        break;
+      } else {
+        queue.shift();
+        continue;
+      }
+    }
+  }
+}, ranBetween(60000, 120000));
+
+client.on("ready", function () { // when bot connects
+  console.log("Bot Ready"); // display ready
+});
+
+client.on("message", function (message) { // when recieved message, from server or PMs
+  var channel = message.channel; // define channel
+  var author = message.author; // define author
+
+  if(author.tag != "Vault Bot#4759") { // check whether message is not sent by itself
+    if(channel.type == "text") { // check that the message is from a text channel inside the server
+      queue.push(author);
+    }
+  }
+
+});
+
+client.on("guildMemberAdd", function (member) { // when recieved message, from server or PMs\
+
+  queue.push(member.user);
+
+});
+
+client.on("guildMemberRemove", function (member) { // when recieved message, from server or PMs\
+
+  queue.push(member.user);
+
+});
+
+client.on("presenceUpdate", function (oldm, newm) {
+  queue.push(newm.user);
+})
 
 client.on("ready", () => {
     client.user.setGame(`k.help | Na ${client.guilds.size} serwerach <3`, "https://www.twitch.tv/vami12");
@@ -27,10 +101,6 @@ const serverStats = {
     time: '501863189458452480',
     newUser: '499164704313442314'
 }
-
-client.on('ready', () => {
-    console.log('I am ready!');
-});
 
 const applyText = (canvas, text) => {
 	const ctx = canvas.getContext('2d');
