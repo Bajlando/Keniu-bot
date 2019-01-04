@@ -4,10 +4,6 @@ const fs = require("fs");
 const Canvas = require('canvas');
 const snekfetch = require('snekfetch');
 
-client.on("presenceUpdate", function (oldm, newm) {
-  queue.push(newm.user);
-})
-
 client.on("ready", () => {
     client.user.setGame(`k.help | Na ${client.guilds.size} serwerach <3`, "https://www.twitch.tv/vami12");
 });
