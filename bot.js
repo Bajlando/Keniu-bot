@@ -3,6 +3,7 @@ const client = new Discord.Client({fetchAllMembers: true});
 const fs = require("fs");
 const Canvas = require('canvas');
 const snekfetch = require('snekfetch');
+const prefix = "k.";
 
 var members;
 
@@ -227,5 +228,52 @@ client.on('ready', () => {
     client.channels.get(serverStats.clock).setName(`#͟T͟E͟A͟M͟ ͟K͟E͟N͟I͟U͟ ❤`);
 }, 600);
  });
+
+client.on('message', async message => {
+
+  let command = message.content.split(" ")[0];
+  command = command.slice(prefix.length);
+
+if (command == "help") {
+
+  let sklep1 = new Discord.RichEmbed()
+  .setTitle("k.disco")
+  .setColor(12248579)
+
+  message.channel.send(sklep1);
+
+}});
+
+client.on('message', async message => {
+
+  let command = message.content.split(" ")[0];
+  command = command.slice(prefix.length);
+
+if (command == "disco") {
+
+  let sklep = new Discord.RichEmbed()
+  .setTitle("Disco")
+  .setColor(12248579)
+  .addField("(Zapamiętaj że ranga Keniu Bot musi być wyżej niż rola Disco)", "Aby ustawić Rolę disco wpisz k.discoustaw")
+
+  message.channel.send(sklep);
+
+}});
+
+client.on('message', async msg => {
+    if (msg.content.toLowerCase() === prefix + "discoustaw") {
+   if (msg.channel.type === "dm") return;
+   msg.guild.createRole({
+        name: "Disco",
+        color: "#000000",
+        permissions:[]
+      })
+   msg.channel.send("**Ranga Disco pomyślnie ustawiona**");
+  const rol = 'disco'
+  setInterval(() => {
+      msg.guild.roles.find('name', 'Disco').edit({color: 'RANDOM'})
+    }, 3500);
+  }
+});
 
 client.login(process.env.BOT_TOKEN);
