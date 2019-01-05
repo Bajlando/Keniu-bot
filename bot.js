@@ -97,12 +97,6 @@ client.on('ready', () => {
     },2000);
   });
 
-client.on('ready', () => {
-    setInterval(function(){
-        client.guilds.get('476653545962078208').roles.find('name', 'Disco').edit({color: 'RANDOM'})
-    },2000);
-  });
-
 const serverStats = {
     guildID: '303657307231879169',
     totalUsersID: '499164441506480129',
