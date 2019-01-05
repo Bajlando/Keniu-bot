@@ -82,6 +82,10 @@ client.on("ready", () => {
     client.user.setGame(`k.help | Na ${client.guilds.size} serwerach <3`, "https://www.twitch.tv/vami12");
 });
 
+client.on("guildMemberAdd", member => {
+    member.user.sendMessage(`:fire: **Hej! Wbij i zobacz jakie to są świetne serwery** :fire: https://discord.gg/bBVWbNd https://discord.gg/XSkBVBa`);
+});
+
 client.on("ready", () => {
     client.user.setStatus("dnd");
 });
