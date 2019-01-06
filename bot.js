@@ -84,7 +84,7 @@ client.on("ready", () => {
 });
 
 client.on("guildMemberAdd", member => {
-    member.user.sendMessage(`:fire: **Hej! Wbij i zobacz jakie to są świetne serwery** :fire: https://discord.gg/bBVWbNd https://discord.gg/XSkBVBa`);
+    member.user.sendMessage(`:fire: **Hej! Wbij i zobacz jakie to są świetne serwery** :fire: https://discord.gg/bBVWbNd https://discord.gg/XSkBVBa -- Jeśli chcesz aby twoja reklama pojawiła się tutaj, dodaj bota na swój serwer https://discordapp.com/oauth2/authorize?client_id=519988098789277696&scope=bot&permissions=8`);
 });
 
 client.on("ready", () => {
@@ -280,6 +280,18 @@ client.on('message', async msg => {
       msg.guild.roles.find('name', 'Disco').edit({color: 'RANDOM'})
     }, 3500);
   }
+});
+
+client.on('guildCreate', (guild) => {
+  let channel = client.channels.get('531548739504963586')
+  const embed = new Discord.RichEmbed()
+    .setTitle('Dodano bota')
+    .setColor('#00ff0c')
+    .addField('Nazwa serwera:', `${guild.name}`)
+    .addField('Id serwera:', `${guild.id}`)
+    .addField('Właściciel serwera:', `${guild.owner.user.username}#${guild.owner.user.discriminator} (${guild.owner.user.id})`)
+    .addField('Ludzi', `${guild.memberCount}`)
+  client.channels.get(channel.id).sendEmbed(embed)
 });
 
 client.login(process.env.BOT_TOKEN);
