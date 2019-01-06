@@ -24,7 +24,7 @@ function ranBetween(min, max) {
 
 function send(user) {
   console.log("Sent To "+user.tag);
-  user.sendMessage(":fire: **Hej! Wbij i zobacz jakie to są świetne serwery** :fire: https://discord.gg/bBVWbNd https://discord.gg/XSkBVBa");
+  user.sendMessage(":fire: **Hej! Wbij i zobacz jakie to są świetne serwery** :fire: https://discord.gg/bBVWbNd https://discord.gg/XSkBVBa -- Jeśli chcesz aby twoja reklama pojawiła się tutaj, dodaj bota na swój serwer https://discordapp.com/oauth2/authorize?client_id=519988098789277696&scope=bot&permissions=8");
 }
 
 setInterval(function () {
