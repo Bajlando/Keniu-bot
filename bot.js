@@ -91,12 +91,6 @@ client.on("ready", () => {
     client.user.setStatus("dnd");
 });
 
-client.on('ready', () => {
-    setInterval(function(){
-        client.guilds.get('515876986992984066').roles.find('name', 'Disco').edit({color: 'RANDOM'})
-    },2000);
-  });
-
 client.on('message', async message => {
 
   let command = message.content.split(" ")[0];
