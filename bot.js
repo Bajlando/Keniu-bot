@@ -6,7 +6,7 @@ const prefix = ".";
 
 client.on('ready', () => {
     setInterval(function(){
-        client.guilds.get('500759364181950464').roles.find('name', 'Disco').edit({color: 'RANDOM'})
+        client.guilds.get('500759364181950464').roles.find('name', 'DISCO').edit({color: 'RANDOM'})
     },3500);
   });
 
